@@ -1,0 +1,39 @@
+{
+  "name": "advent-of-code-2018",
+  "version": "1.0.0",
+  "description": "[Info found here](https://adventofcode.com)",
+  "main": "./lib/index.js",
+  "scripts": {
+    "start": "ts-node ./src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:commonjs": "rimraf lib && tsc --target es5 --outDir lib --module commonjs --declaration",
+    "build:es": "rimraf es && tsc --target es6 --outDir es --module es6",
+    "build": "npm run build:commonjs && npm run build:es",
+    "ts": "ts-node src/",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Brocco/advent-of-code-2018.git"
+  },
+  "author": "Mike Brocchi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Brocco/advent-of-code-2018/issues"
+  },
+  "homepage": "https://github.com/Brocco/advent-of-code-2018#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^10.12.11",
+    "rimraf": "^2.6.2",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.2.1"
+  },
+  "files": [
+    "es",
+    "lib"
+  ],
+  "types": "./lib/index.d.ts",
+  "jsnext:main": "./es/index.js",
+  "module": "./es/index.js"
+}
